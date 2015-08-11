@@ -1,0 +1,154 @@
+#include "iostream"
+using namespace std;
+
+#define INF   999    // ?8?99999 
+#define  MAXVEX 20   //????????20 
+
+
+/*******???????************/
+struct MGraph{
+  char  vexs[MAXVEX];              // ????
+  float arcs[MAXVEX][MAXVEX];      // ????
+  int   n;                         //???????
+  int   e;                              
+  };
+
+
+struct Closedge{                             //???V-U??????,??????U?????????????
+ char  adjvex;                                // U????
+ float     lowcost;                          // ????
+}   ;
+
+/***************??????************/
+typedef struct edgeNode  {  
+   //?????
+	int    adjvex;       // ??????
+	edgeNode * nextEdge; // ????????
+	float  weight;       //?
+} edgeNode ;
+
+
+typedef struct headNode { 
+	//?????
+	char  vertex ;        // ????
+	edgeNode  *firstEdge; // ????????????
+} headNode;
+
+typedef struct{                
+	//?????
+	headNode adjList[MAXVEX];  //????
+	int n;                     //???
+	int e;                    //??
+} adjGraph;
+
+
+
+void createAdjlist(adjGraph &G, char v[],int n, int e[][3] , int m){
+	/***????????v[n],???e[m][2]????????????G**/
+
+	int i,j,k;
+	edgeNode *p;
+
+	G.n = n;     //???????
+	G.e = m;  
+
+	for(i=0;i<G.n;i++){  
+	//????
+	   G.adjList[i].vertex=v[i];
+	   G.adjList[i].firstEdge =NULL;
+	}
+
+	
+	for(k=0; k<G.e; k++) { 
+	//???
+
+	    i=e[k][0];
+		j=e[k][1];  // ???????i,j
+		float w=e[k][2];
+		p=new edgeNode;  //?????  
+		p->adjvex=j;
+		p->nextEdge=G.adjList[i].firstEdge;  //???????i?????
+		p->weight=w;
+		G.adjList[i].firstEdge=p;
+
+		//?????,????j????????
+		p=new edgeNode;
+		p->adjvex=i;
+		p->nextEdge=G.adjList[j].firstEdge;
+		p->weight=w;
+		G.adjList[j].firstEdge=p;
+	}
+}
+
+
+void adjLIstToM ( adjGraph g1 , MGraph &g2)
+/*********????????g1 ?? ???????g2 *********/
+{
+	int i,j; 
+	
+	g2.n=g1.n;
+	g2.e=g1.e;
+
+	for( i=0 ; i<g2.n ; i++)  //??????
+		g2.vexs[i] = g1.adjList[i].vertex;
+
+	for(i=0;i<g2.n;i++)    //???????
+		for(j=0;j<g2.n;j++)
+			g2.arcs[i][j] = INF;
+
+	for(i=0; i<g1.n; i++)  //????????
+		for( edgeNode *p = g1.adjList[i].firstEdge;  p   ;  p=p->nextEdge)
+		     g2.arcs[i][p->adjvex] = g2.arcs[p->adjvex][i] = p->weight;
+}
+
+
+
+
+void prim(MGraph G ,int k){
+	/******prim ??: ?????????G,??k?????,??MST  ****/
+
+	Closedge closedge[MAXVEX];   //??????,???? 
+	for(int i=0;i<G.n;i++) {      
+	
+		closedge[ i ].adjvex=G.vexs[k];
+		closedge[i].lowcost=G.arcs[k][i];
+		
+	}
+
+
+
+
+
+}
+
+
+
+void main()
+{
+
+
+	char v[]="123456";
+	int e[][3]={ 
+		// {i,j,w}:???(i,j),??w
+		{0,1,6},
+		{0,2,1},
+		{0,3,5},
+		{1,2,5},
+		{1,4,3},
+		{2,3,5},
+		{2,5,4},
+		{2,4,6},
+		{3,5,2},
+		{4,5,6}
+	};
+
+	adjGraph g1;
+	createAdjlist(g1,v,6,e,10);
+    MGraph   g2 ; 
+	adjLIstToM ( g1 , g2 );
+
+
+	 
+	prim(g2,0);
+	
+}

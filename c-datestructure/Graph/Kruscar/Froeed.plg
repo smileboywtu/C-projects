@@ -1,0 +1,27 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: Froeed - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\Users\SmithBob\AppData\Local\Temp\RSP24DC.tmp" with contents
+[
+/nologo /MLd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_CONSOLE" /D "_MBCS" /Fp"Debug/Froeed.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /GZ  /c 
+"F:\Data structure\Graph\Froeed\Froeed.cpp"
+]
+Creating command line "cl.exe @C:\Users\SmithBob\AppData\Local\Temp\RSP24DC.tmp" 
+<h3>Output Window</h3>
+Compiling...
+Froeed.cpp
+F:\Data structure\Graph\Froeed\Froeed.cpp(88) : error C4716: 'search' : must return a value
+Error executing cl.exe.
+
+
+
+<h3>Results</h3>
+Froeed.obj - 1 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

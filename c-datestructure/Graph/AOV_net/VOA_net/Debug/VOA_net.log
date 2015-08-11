@@ -1,0 +1,28 @@
+﻿Build started 02/12/2013 19:14:35.
+     1>Project "E:\C source files\VOA_net\VOA_net\VOA_net.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating "Debug\VOA_net.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         All outputs are up-to-date.
+         e:\VS2010Express\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Debug\VOA_net.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt VOA_net.cpp
+         VOA_net.cpp
+       ManifestResourceCompile:
+         All outputs are up-to-date.
+       Link:
+         e:\VS2010Express\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"E:\C source files\VOA_net\Debug\VOA_net.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\VOA_net.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"E:\C source files\VOA_net\Debug\VOA_net.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\C source files\VOA_net\Debug\VOA_net.lib" /MACHINE:X86 Debug\VOA_net.exe.embed.manifest.res
+         Debug\stdafx.obj
+         Debug\VOA_net.obj
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:"Debug\VOA_net.exe.embed.manifest" /manifest Debug\VOA_net.exe.intermediate.manifest
+         All outputs are up-to-date.
+       LinkEmbedManifest:
+         All outputs are up-to-date.
+         VOA_net.vcxproj -> E:\C source files\VOA_net\Debug\VOA_net.exe
+       FinalizeBuildStatus:
+         Deleting file "Debug\VOA_net.unsuccessfulbuild".
+         Touching "Debug\VOA_net.lastbuildstate".
+     1>Done Building Project "E:\C source files\VOA_net\VOA_net\VOA_net.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:01.47
