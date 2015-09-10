@@ -1,4 +1,8 @@
 # C-projects
-this show the c projects done
+
+This project contains data structure and the game dirs.
+
 # Tips
-1. Add the game project done at 2013
+
+1. The data structure may use C++.
+2. The game dir contains a game use the easyx.h graphic lib.
